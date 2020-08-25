@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.argv.length == 2 ? process.env.token : "";
-const welcomeChannelName = "안녕하세요";
-const byeChannelName = "안녕히가세요";
-const welcomeChannelComment = "어서오세요.";
-const byeChannelComment = "안녕히가세요.";
+const welcomeChannelName = "반갑습니다";
+const byeChannelName = "반갑습니다";
+const welcomeChannelComment = "님 안녕하세요!";
+const byeChannelComment = "님 안녕히가세요!";
 
 client.on('ready', () => {
   console.log('켰다.');
@@ -59,12 +59,9 @@ client.on('message', (message) => {
     let commandList = [
       {name: '!help', desc: 'help'},
       {name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
-      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+      {name: '!전체공지일반', desc: 'dm으로 전체 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
-      {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -105,10 +102,10 @@ client.on('message', (message) => {
           message.channel.send('**'+message.guild.channels.get(message.channel.id).guild.name+'** 채널 권한이 없어 초대코드 발행 실패')
         }
       })
-  } else if(message.content.startsWith('!전체공지2')) {
+  } else if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!전체공지2'.length);
+      let contents = message.content.slice('!전체공지'.length);
       let embed = new Discord.RichEmbed()
         .setAuthor('공지')
         .setColor('#186de6')
@@ -126,10 +123,10 @@ client.on('message', (message) => {
     } else {
       return message.reply('채널에서 실행해주세요.');
     }
-  } else if(message.content.startsWith('!전체공지')) {
+  } else if(message.content.startsWith('!전체공지일반')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!전체공지'.length);
+      let contents = message.content.slice('!전체공지일반'.length);
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
         x.user.send(`<@${message.author.id}> ${contents}`);
