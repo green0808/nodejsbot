@@ -62,7 +62,6 @@ client.on('message', (message) => {
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지일반', desc: 'dm으로 전체 공지 보내기'},
       {name: '!청소 [숫자]', desc: '채팅 청소'},
-      {name: '!투표 [항목1] [항목2] [항목3] [시간]', desc: '투표를 연다(항목최대5개)'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
