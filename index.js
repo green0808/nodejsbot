@@ -213,7 +213,7 @@ client.on('message', (message) => {
 		message.channel.send("바보") 
 	}
 	if (message.content.startsWith("테스트")) { 
-		message.channel.send("ㅇㅉ) 
+		message.channel.send("ㅇㅉ")
 	}
 	
 });
