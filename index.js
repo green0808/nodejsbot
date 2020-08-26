@@ -32,7 +32,7 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == '!업데이트') {
+  if(message.content == 'ㅎㅇ') {
     return message.reply('ㅎㅇ');a
   }
 
@@ -58,7 +58,7 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!도움말', desc: '도움말'},
-      {name: '!업데이트', desc: '투표기능 추가 20/8/26'},
+      {name: 'ㅎㅇ', desc: 'ㅎㅇ'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지일반', desc: 'dm으로 전체 공지 보내기'},
       {name: '!청소 [숫자]', desc: '채팅 청소'},
