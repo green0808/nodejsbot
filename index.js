@@ -8,7 +8,7 @@ const byeChannelComment = "님 안녕히가세요!";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '아 섹스하고 싶다' }, status: 'online' })
+  client.user.setPresence({ game: { name: '도움말 !도움말' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -36,7 +36,7 @@ client.on('message', (message) => {
     return message.reply('pong');a
   }
 
-  if(message.content == 'embed') {
+  if(message.content == 'embedsdsdsdsdseqvs') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
@@ -54,14 +54,14 @@ client.on('message', (message) => {
       .setFooter('그린봇', img)
 
     message.channel.send(embed)
-  } else if(message.content == '!help') {
+  } else if(message.content == '!도움말') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: '!help', desc: 'help'},
+      {name: '!도움말', desc: '도움말'},
       {name: 'ping', desc: '현재 핑 상태'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지일반', desc: 'dm으로 전체 공지 보내기'},
-      {name: '!청소', desc: '텍스트 지움'},
+      {name: '!청소 [숫자]', desc: '텍스트 지움'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -77,7 +77,7 @@ client.on('message', (message) => {
     embed.addField('Commands: ', commandStr);
 
     message.channel.send(embed)
-  } else if(message.content == '!초대코드2') {
+  } else if(message.content == '!초대코드2ㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ') {
     client.guilds.array().forEach(x => {
       x.channels.find(x => x.type == 'text').createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
         .then(invite => {
@@ -89,7 +89,7 @@ client.on('message', (message) => {
           }
         })
     });
-  } else if(message.content == '!초대코드') {
+  } else if(message.content == '!초대코드ㄴㅁㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇ') {
     if(message.channel.type == 'dm') {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
@@ -179,7 +179,7 @@ client.on('message', (message) => {
 
 function checkPermission(message) {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) {
-    message.channel.send(`<@${message.author.id}> ` + "명령어를 수행할 관리자 권한을 소지하고 있지않습니다.")
+    message.channel.send(`<@${message.author.id}> ` + "관리자만 가능한명령어 입니다")
     return true;
   } else {
     return false;
