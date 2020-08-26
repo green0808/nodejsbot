@@ -205,5 +205,19 @@ async function AutoMsgDelete(message, str, delay = 3000) {
   }, delay);
 }
 
+client.on('message', (message) => { 
+	if (message.content.startsWith("안녕")) { //메세지가 /안녕 으로 시작된다면
+		message.channel.send("ㅎㅇ") //안녀엉! 이라는 메세지를 채널에 전송합니다.
+	}
+	if (message.content.startsWith("제우스")) { 
+		message.channel.send("바보") 
+	}
+	if (message.content.startsWith("테스트")) { 
+		message.channel.send("ㅇㅉ) 
+	}
+	
+});
+
+
 
 client.login(token);
