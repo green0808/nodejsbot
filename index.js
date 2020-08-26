@@ -32,8 +32,15 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');a
+  if(message.content == 'ㅎㅇ') {
+    return message.reply('안녕하세요');a
+  }
+
+client.on('message', (message) => {
+  if(message.author.bot) return;
+  
+  if(message.content == '안녕하세요') {
+    return message.reply('안녕하세요');a
   }
 
   if(message.content == 'embedsdsdsdsdseqvs') {
@@ -58,10 +65,10 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!도움말', desc: '도움말'},
-      {name: 'ping', desc: '현재 핑 상태'},
+      {name: 'ㅎㅇ', desc: '인사해줌'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지일반', desc: 'dm으로 전체 공지 보내기'},
-      {name: '!청소 [숫자]', desc: '텍스트 지움'},
+      {name: '!청소 [숫자]', desc: '채팅 청소'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -204,6 +211,7 @@ async function AutoMsgDelete(message, str, delay = 3000) {
     msg.delete();
   }, delay);
 }
+
 
 
 client.login(token);
