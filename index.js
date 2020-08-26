@@ -224,6 +224,9 @@ client.on('message', (message) => {
   if (message.content.startsWith("그린봇 그린은")) { 
 		message.channel.send("ㅈㄴ 잘생김 ㅇㅈㅇㅈㅇㅈㅇㅈㅇㅈㅇㅈ")
   }
+  if (message.content.startsWith("그린봇")) { 
+		message.channel.send("뭐")
+  }
   if (message.content.startsWith("그린봇 ㄲㅈ")) { 
 		message.channel.send("어쩔")
 	}
