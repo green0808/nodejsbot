@@ -212,7 +212,7 @@ client.on('message', (message) => {
 	if (message.content.startsWith("그린봇 제우스")) { 
 		message.channel.send("바보") 
 	}
-	if (message.content.startsWith("그린봇 테스트")) { 
+	if (message.content.startsWith("그린봇 심심해")) { 
 		message.channel.send("ㅇㅉ")
   }
   if (message.content.startsWith("그린봇 뭐해")) { 
@@ -221,8 +221,14 @@ client.on('message', (message) => {
   if (message.content.startsWith("그린봇 똥싸")) { 
 		message.channel.send("조까")
   }
-  if (message.content.startsWith("그린봇 그린은?")) { 
+  if (message.content.startsWith("그린봇 그린은")) { 
 		message.channel.send("ㅈㄴ 잘생김 ㅇㅈㅇㅈㅇㅈㅇㅈㅇㅈㅇㅈ")
+  }
+  if (message.content.startsWith("그린봇")) { 
+		message.channel.send("뭐")
+  }
+  if (message.content.startsWith("그린봇 ㄲㅈ")) { 
+		message.channel.send("어쩔")
 	}
 	
 });
